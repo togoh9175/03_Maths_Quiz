@@ -1,12 +1,5 @@
-print ()
-print ("\\\Welcome fellow beings!!///")
-print ()
 
-
-
-
-# Functions goes here
-
+# Functions go here...
 def yes_no (question):
   valid = False
   while not valid:
@@ -24,11 +17,10 @@ def yes_no (question):
       print("please answer yes / no")
 
 def instructions ():
+  print ("**** How to play ****")
   print ()
-  print ("\\\\ How to play ////")
+  print ("The rules of the game go here")
   print ()
-  print ("This quiz is not any quiz, Its a math quiz!")
-  print ("There will be maths equations for you to answer")
   return ""
 
 # Main Routine goes here...
@@ -36,4 +28,4 @@ played_before = yes_no ("Have you played the game before? ")
 
 if played_before =="no":
   instructions ()
-print ("Perfect! We shall begin")
+print ("Program continues")
