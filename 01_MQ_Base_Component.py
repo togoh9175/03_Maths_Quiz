@@ -1,5 +1,5 @@
 print ()
-print ("\\\Welcome fellow beings!!///")
+print ("▁ ▂ ▄ ▅ ▆ ▇ █ ᴡᴇʟᴄᴏᴍᴇ ғᴇʟʟᴏᴡ ʙᴇɪɴɢs █ ▇ ▆ ▅ ▄ ▂ ▁")
 print ()
 
 
@@ -25,16 +25,17 @@ def yes_no (question):
 
 def instructions ():
   print ()
-  print ("\\\\ How to play ////")
+  print ("     ▁ ▂ ▄ ▅ ▆ ▇ █ ʜᴏᴡ ᴛᴏ ᴘʟᴀʏ █ ▇ ▆ ▅ ▄ ▂ ▁")
   print ()
-  print ("This quiz is not any quiz, Its a math quiz!")
-  print ("There will be maths equations for you to answer")
+  print ("   This quiz is not any quiz, Its a math quiz!")
+  print ("   There will be math equations for you to answer")
+  print ("   As ")
   return ""
 
 # Main Routine goes here...
-played_before = yes_no ("Have you played the game before? ")
+played_before = yes_no ("         Have you played the game before? ")
 
 if played_before =="no":
   instructions ()
 print ()
-print ("Perfect! We shall begin")
+print ("             Perfect! We shall begin")
