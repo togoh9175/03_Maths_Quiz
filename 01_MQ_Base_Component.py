@@ -36,4 +36,5 @@ played_before = yes_no ("Have you played the game before? ")
 
 if played_before =="no":
   instructions ()
+print ()
 print ("Perfect! We shall begin")
