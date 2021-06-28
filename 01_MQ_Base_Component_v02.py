@@ -21,7 +21,7 @@ def yes_no (question):
       return response
 
     else:
-      print("please answer yes / no")
+      print("                 please answer yes / no")
 
 def instructions ():
   print ()
@@ -43,6 +43,30 @@ if played_before =="no":
   
 print ()
 print ("               Perfect! Lets begin")
-
 print ()
+print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
+print()
 
+# Functions go here
+def check_rounds():
+    while True:
+        response = input("How many questions would you like: ")
+
+        round_error = "Please type either <enter> " \
+                      "or an integer that is more than 0\n"
+
+        # if infinite mode not chosen, check response
+        # is an integer that is more than 0
+        if response != "":
+            try:
+                response = int(response)
+
+                # if response is too low, go back to
+                # start of loop
+                if response < 1:
+                    print(round_error)
+                    continue
+            except ValueError:
+                print(round_error)
+                continue
+        return response
