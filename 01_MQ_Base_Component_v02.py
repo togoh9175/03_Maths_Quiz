@@ -3,8 +3,6 @@ print ("▁ ▂ ▄ ▅ ▆ ▇ █ ᴡᴇʟᴄᴏᴍᴇ ғᴇʟʟᴏᴡ ʙᴇɪ
 print ()
 
 
-
-
 # Functions goes here
 
 def yes_no (question):
@@ -49,12 +47,13 @@ print()
 
 # Functions go here
 
-questions = {'15 + 20: ':'35'}
+import random
 
-for questions in questions.keys():
-  user_answer = input (questions)
-  if questions.get(questions) == user_answer:
-   print ('correct!')
-  else:
-   print ('incorecct!')
- 
+num_1 = random.randint(1, 10)
+num_2 = random.randint(1, 10)
+
+question = "{} + {}".format(num_1, num_2)
+user_ans = int(input("{} = ".format(question)))
+answer = eval(question)
+
+print(answer) 
