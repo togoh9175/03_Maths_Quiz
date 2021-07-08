@@ -33,7 +33,7 @@ def instructions ():
   return ""
 
 
-# Main Routine goes here...
+# as user if they have played before.
 played_before = yes_no ("         Have you played the game before? ")
 
 if played_before =="no":
@@ -95,17 +95,10 @@ def choice_checker(question, valid_list, error):
 
 # list of valid responses
 yes_no_list = ["yes", "no"]
-rps_list = ["rock", "paper", "scissors", "xxx"]
-
-# ask user if they have played before.
-# if 'yes', show instructions
-
 
 # ask user for # of rounds then loop
-rounds_played = 0
-
-rounds_lost = 0
-rounds_drawn = 0
+questions_played = 0
+questions_lost = 0
 
 game_summary = []
 
@@ -118,9 +111,9 @@ while end_game == "no":
     # Rounds Heading
     print()
     if rounds == "":
-        heading = "continuous Mode:  "  "Round {}".format(rounds_played + 1)
+        heading = "continuous Mode:  "  "Questions {}".format(questions_played)
     else:
-        heading = "Round {} of {}".format(rounds_played + 1, rounds)
+        heading = "Question {} of {}".format(questions_played + 1, rounds)
     print(heading)
 
     import random
@@ -132,18 +125,20 @@ while end_game == "no":
     user_ans = int(input("{} = ".format(question)))
     answer = eval(question)
 
-    print(answer) 
+   if answer == question:
+     print 
 
     #  ***** rest of loop / game *****
     print("you choose {}".format(user_ans))
 
     # output results
-    print(rounds)
-    summary_statement = "Round {}: {}".format(rounds_played + 1, rounds)
+    summary_statement = "Round {}: {}".format(questions_played + 1, rounds)
     game_summary.append(summary_statement)
 
-    rounds_played += 1
+    questions_played += 1
 
     # end game if requested # of rounds has been played
-    if rounds_played == rounds:
+    if questions_played == rounds:
         break
+
+
