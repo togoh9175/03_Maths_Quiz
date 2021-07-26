@@ -2,9 +2,6 @@ print ()
 print ("▁ ▂ ▄ ▅ ▆ ▇ █ ᴡᴇʟᴄᴏᴍᴇ ғᴇʟʟᴏᴡ ʙᴇɪɴɢs █ ▇ ▆ ▅ ▄ ▂ ▁")
 print ()
 
-
-# Functions goes here
-
 def yes_no (question):
   valid = False
   while not valid:
@@ -44,8 +41,6 @@ print ("               Perfect! Lets begin")
 print ()
 print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
 print()
-
-# Functions go here
 
 # Functions go here
 def check_rounds():
@@ -121,12 +116,18 @@ while end_game == "no":
     num_1 = random.randint(1, 10)
     num_2 = random.randint(1, 10)
 
-    question = "{} + {}".format(num_1, num_2)
-    user_ans = int(input("{} = ".format(question)))
-    answer = eval(question)
+    questions = "{} + {}".format(num_1, num_2)
+    show_questions = "{} = ".format(questions)
 
-   if answer == question:
-     print 
+   user_ans = check_rounds()
+
+   if user_ans == eval(questions):
+     print("correct!".format(user_ans))
+     
+    answer = eval(question)
+    print("answer {}".format(answer))
+  
+   
 
     #  ***** rest of loop / game *****
     print("you choose {}".format(user_ans))

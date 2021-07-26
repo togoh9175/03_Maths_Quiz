@@ -2,11 +2,6 @@ print ()
 print ("▁ ▂ ▄ ▅ ▆ ▇ █ ᴡᴇʟᴄᴏᴍᴇ ғᴇʟʟᴏᴡ ʙᴇɪɴɢs █ ▇ ▆ ▅ ▄ ▂ ▁")
 print ()
 
-
-
-
-# Functions goes here
-
 def yes_no (question):
   valid = False
   while not valid:
@@ -21,7 +16,7 @@ def yes_no (question):
       return response
 
     else:
-      print("please answer yes / no")
+      print("                 please answer yes / no")
 
 def instructions ():
   print ()
@@ -35,34 +30,87 @@ def instructions ():
   return ""
 
 
-# Main Routine goes here...
+# as user if they have played before.
 played_before = yes_no ("         Have you played the game before? ")
 
 if played_before =="no":
   instructions ()
+  
 print ()
 print ("               Perfect! Lets begin")
-
 print ()
+print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
+print()
 
-show_instructions = ""
-while show_instructions.lower() != "xxx":
-    # Ask the user if they have played before
-    show_instructions = input("                    Yes or No?").lower()
+# Functions go here
+def check_rounds():
+    while True:
+        response = input("How many questions: ")
 
-    # If they say yes, output 'program continues'
-    # If they say no, output 'display instructions'
-    # If the answer is invalid, print an error.
+        round_error = "Please type either <enter> " \
+                      "or an integer that is more than 0\n"
 
-    if show_instructions == "yes" or show_instructions == "y":
-        show_instructions = "yes"
-        print("program continues")
+        # if infinite mode not chosen, check response
+        # is an integer that is more than 0
+        if response != "":
+            try:
+                response = int(response)
 
-    elif show_instructions == "no" or show_instructions == "n":
-        show_instructions = "no"
-        print("display instructions")
+                # if response is too low, go back to
+                # start of loop
+                if response < 1:
+                    print(round_error)
+                    continue
+            except ValueError:
+                print(round_error)
+                continue
+        return response
 
+
+def choice_checker(question, valid_list, error):
+
+    valid = False
+    while not valid:
+
+        # Ask user for choice (and put choice in lowercase)
+        response = input(question).lower()
+
+        # iterates through list and if response is an item
+        # in the list (or the first letter of an item), the
+        # full item name is returned
+
+        for item in valid_list:
+            if response == item[0] or response == item:
+                return item
+                # output error if item not in list
+
+        print(error)
+        print()
+# main routine goes here
+
+# list of valid responses
+yes_no_list = ["yes", "no"]
+
+# ask user for # of rounds then loop
+questions_played = 0
+questions_lost = 0
+
+game_summary = []
+
+# Ask user for # of rounds, <enter> for infinite mode
+rounds = check_rounds()
+
+end_game = "no"
+while end_game == "no":
+    # Start of Game Play Loop
+    # Rounds Heading
+    print()
+    if rounds == "":
+        heading = "continuous Mode:  "  "Questions {}".format(questions_played)
     else:
-        print("please answer yes / no")
+        heading = "Question {} of {}".format(questions_played + 1, rounds)
+    print(heading)
 
-    print("You chose {}".format(show_instructions))
+    import random
+
+    
