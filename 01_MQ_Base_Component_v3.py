@@ -46,59 +46,8 @@ def choice_checker(question, valid_list, error):
 
       print(error)
       print()
-# main routine goes here
 
-yes_no_list = ["yes", "no"]
 
-# ask user for # of rounds then loop
-questions_played = 0
-questions_lost = 0
-
-game_summary = []
-
-# Ask user for # of rounds, <enter> for infinite mode
-rounds = check_rounds()
-
-end_game = "no"
-while end_game == "no":
-    # Start of Game Play Loop
-    # Rounds Heading
-    print()
-    if rounds == "":
-        heading = "continuous Mode:  "  "Questions {}".format(questions_played)
-    else:
-        heading = "Question {} of {}".format(questions_played + 1, rounds)
-    print(heading)
-
-    
-
-    num_1 = random.randint(1, 10)
-    num_2 = random.randint(1, 10)
-
-    questions = "{} + {}".format(num_1, num_2)
-    show_questions = "{} = ".format(questions)
-
-   user_ans = choice_checker()
-
-   if user_ans == eval(questions):
-     print("correct!".format(user_ans))
-   else user_ans == eval(show_questions):
-     print("Incorrect!".format(user_ans))
-    answer = eval(question)
-    print("answer {}".format(answer))
-  
-    #  ***** rest of loop / game *****
-    print("you choose {}".format(user_ans))
-
-    # output results
-    summary_statement = "Round {}: {}".format(questions_played + 1, rounds)
-    game_summary.append(summary_statement)
-
-    questions_played += 1
-
-    # end game if requested # of rounds has been played
-    if questions_played == rounds:
-        break
 
 def yes_no (question):
   valid = False
@@ -140,6 +89,68 @@ print ()
 print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
 print()
 
-# list of valid responses
+yes_no_list = ["yes", "no"]
+
+# ask user for # of rounds then loop
+questions_played = 0
+questions_lost = 0
+
+game_summary = []
+
+# Ask user for # of rounds, <enter> for infinite mode
+rounds = check_rounds()
+
+end_game = "no"
+while end_game == "no":
+    # Start of Game Play Loop
+    # Rounds Heading
+    print()
+    if rounds == "":
+        heading = "continuous Mode:  "  "Questions {}".format(questions_played)
+    else:
+        heading = "Question {} of {}".format(questions_played + 1, rounds)
+    print(heading)
+
+    
+
+    num_1 = random.randint(1, 10)
+    num_2 = random.randint(1, 10)
+
+    questions = "{} + {}".format(num_1, num_2)
+    show_questions = "{} = ".format(questions)
+
+    user_ans = int(input(show_questions))
+
+    if user_ans == eval(questions):
+      print("correct!".format(user_ans))
+    else:
+      print("Incorrect!".format(user_ans))
+      answer = eval(questions)
+      print("answer {}".format(answer))
+
+    #  ***** rest of loop / game *****
+    print("you choose {}".format(user_ans))
+
+    # output results
+    summary_statement = "Round {}: {}".format(questions_played + 1, rounds)
+    game_summary.append(summary_statement)
+
+    questions_played += 1
+
+    # end game if requested # of rounds has been played
+    if questions_played == rounds:
+      break
+
+
+
+
+
+# End of game statements
+print()
+print('***** End Game Summary ******')
+print("Correct: {} \t|\t Incorrect: {} \t|\t "
+      "{}".format(questions_played, questions_lost))
+print()
+print("Thanks For Playing")
 
 

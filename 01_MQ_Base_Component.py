@@ -111,6 +111,7 @@ while end_game == "no":
         heading = "Question {} of {}".format(questions_played + 1, rounds)
     print(heading)
 
-    import random
+print ("2 + 5")
+
 
     
