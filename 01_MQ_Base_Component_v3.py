@@ -126,13 +126,10 @@ while end_game == "no":
     else:
       print("Incorrect!".format(user_ans))
       answer = eval(questions)
-      print("answer {}".format(answer))
-
-    #  ***** rest of loop / game *****
-    print("you choose {}".format(user_ans))
+      print("The correct answer {}".format(answer))
 
     # output results
-    summary_statement = "Round {}: {}".format(questions_played + 1, rounds)
+    summary_statement = "Round {}: {}".format(questions_played + 1, rounds,)
     game_summary.append(summary_statement)
 
     questions_played += 1
@@ -141,16 +138,10 @@ while end_game == "no":
     if questions_played == rounds:
       break
 
-
-
-
-
-# End of game statements
 print()
-print('***** End Game Summary ******')
-print("Correct: {} \t|\t Incorrect: {} \t|\t "
-      "{}".format(questions_played, questions_lost))
+print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
+
 print()
-print("Thanks For Playing")
+print("Thanks For Playing!")
 
 
