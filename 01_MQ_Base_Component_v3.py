@@ -69,10 +69,10 @@ def instructions ():
   print ()
   print ("     ▁ ▂ ▄ ▅ ▆ ▇ █ ʜᴏᴡ ᴛᴏ ᴘʟᴀʏ █ ▇ ▆ ▅ ▄ ▂ ▁")
   print ()
-  print ("   This quiz is not any quiz, Its a math quiz!")
-  print ("   There will be math equations for you to answer")
-  print ("   This is an addition math quiz, just answer the c")
-  print ("   orrect answer and see how many questions you got")
+  print ("     This quiz is not any quiz, Its a math quiz!")
+  print ("   There will be math equations ready for you so")
+  print ("          answer the correct one and see")
+  print ("             how many questions you got")
   print ("                       right.")
   return ""
 
