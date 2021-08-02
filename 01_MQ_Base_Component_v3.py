@@ -48,7 +48,6 @@ def choice_checker(question, valid_list, error):
       print()
 
 
-
 def yes_no (question):
   valid = False
   while not valid:
@@ -111,8 +110,6 @@ while end_game == "no":
         heading = "Question {} of {}".format(questions_played + 1, rounds)
     print(heading)
 
-    
-
     num_1 = random.randint(1, 10)
     num_2 = random.randint(1, 10)
 
@@ -129,19 +126,24 @@ while end_game == "no":
       print("The correct answer {}".format(answer))
 
     # output results
-    summary_statement = "Round {}: {}".format(questions_played + 1, rounds,)
+    summary_statement = "Round {}: {}".format(questions_played + 1, rounds)
     game_summary.append(summary_statement)
 
     questions_played += 1
+    questions_lost += 1
 
     # end game if requested # of rounds has been played
     if questions_played == rounds:
       break
 
-print()
-print ("▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌║▌║▌│█║▌")
 
-print()
-print("Thanks For Playing!")
+# Quick Calculations (stats)
+questions_correct = questions_lost - questions_played
 
+# End of Game Statements
+print()
+print('▁ ▂ ▄ ▅ ▆ ▇ █ ɢᴀᴍᴇ sᴜᴍᴍᴀʀʏ █ ▇ ▆ ▅ ▄ ▂ ▁')
+print("Correct: {} \t│\t Incorrect: " "{}".format(questions_correct, questions_lost, questions_played))
+print()
+print("Thanks for playing!")
 
