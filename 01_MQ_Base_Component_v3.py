@@ -119,10 +119,13 @@ while end_game == "no":
     user_ans = int(input(show_questions))
 
     if user_ans == eval(questions):
-      print("correct!".format(user_ans))
+      print("Correct!".format(user_ans))
+      result = "Correct!"
     else:
       print("Incorrect!".format(user_ans))
       answer = eval(questions)
+      result = "Incorrect!"
+      questions_lost += 1
       print("The correct answer {}".format(answer))
 
     # output results
@@ -130,7 +133,7 @@ while end_game == "no":
     game_summary.append(summary_statement)
 
     questions_played += 1
-    questions_lost += 1
+    
 
     # end game if requested # of rounds has been played
     if questions_played == rounds:
@@ -146,4 +149,3 @@ print('▁ ▂ ▄ ▅ ▆ ▇ █ ɢᴀᴍᴇ sᴜᴍᴍᴀʀʏ █ ▇ ▆ ▅
 print("Correct: {} \t│\t Incorrect: " "{}".format(questions_correct, questions_lost, questions_played))
 print()
 print("Thanks for playing!")
-
