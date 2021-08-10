@@ -141,7 +141,7 @@ while end_game == "no":
 
 
 # Quick Calculations (stats)
-questions_correct = questions_lost - questions_played
+questions_correct = questions_played - questions_lost
 
 # End of Game Statements
 print()
